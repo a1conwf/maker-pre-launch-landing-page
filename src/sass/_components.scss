@@ -1,0 +1,67 @@
+@import "./variables";
+@import "./mixins";
+
+//Button
+.btn {
+	display: inline-block;
+	margin: 0 auto;
+	min-width: 300px;
+	height: 48px;
+	padding: 12px 0;
+	@include flex(center, center);
+	font-weight: 800;
+	border-radius: 24px;
+	background-color: $cyan;
+	color: $blue;
+	transition: all 0.3s ease;
+
+	&:hover,
+	&:active {
+		background-color: transparent;
+		border: 2px solid $cyan;
+		color: $white;
+	}
+}
+
+@include x-sm {
+	.btn {
+		min-width: 327px;
+	}
+}
+
+@include md {
+	.btn {
+		min-width: 140px;
+		margin: 0;
+	}
+}
+
+//Input
+input {
+	width: 300px;
+	min-height: 48px;
+	margin: 0 auto;
+	padding-left: 18px;
+	font-weight: 800;
+	outline: none;
+	border: none;
+	border-radius: 24px;
+	color: $white;
+	background-color: $blue;
+
+	&:focus {
+		border: 2px solid $cyan;
+	}
+}
+
+@include x-sm {
+	input {
+		min-width: 327px;
+	}
+}
+
+@include md {
+	input {
+		margin: 0;
+	}
+}

@@ -1,0 +1,101 @@
+@import "../../../sass/variables";
+@import "../../../sass/mixins";
+
+//Card
+.card {
+	max-width: 445px;
+	margin: 0 auto;
+	position: relative;
+	padding: 49px 29px 32px;
+	border-radius: 8px;
+	background-color: $blue;
+	text-align: left;
+
+	//Card img
+	&__img {
+		position: absolute;
+		top: -25px;
+		left: 29px;
+		width: 50px;
+		height: 50px;
+		z-index: 999;
+	}
+
+	//Card cta
+	&__cta {
+		display: block;
+		font-size: 1.8rem;
+		font-weight: 800;
+		margin-bottom: 19px;
+	}
+
+	//Card text
+	&__text {
+		margin-bottom: 24px;
+		opacity: 0.6;
+	}
+
+	//Card payment
+	&__payment {
+		@include flex(flex-start, center);
+		flex-wrap: wrap;
+		gap: 7.5px;
+		margin-bottom: 19px;
+
+		//Payment price
+		&-price {
+			font-size: 4rem;
+			font-weight: 800;
+			line-height: 5.5rem;
+		}
+
+		//Payment period
+		&-period {
+			opacity: 0.6;
+		}
+	}
+
+	//Card features
+	&__features li {
+		margin-bottom: 12px;
+	}
+
+	//First card
+	&:first-child {
+		color: $white;
+	}
+
+	&:first-child &__features li::before {
+		content: url("../../../assets/svg/icon-check-cyan.svg");
+		margin-right: 15px;
+	}
+
+	//Last card
+	&:last-child {
+		color: $darkBlue;
+		background-color: $cyan;
+	}
+
+	&:last-child &__features li::before {
+		content: url("../../../assets/svg/icon-check-blue.svg");
+		margin-right: 15px;
+	}
+}
+
+@include md {
+	//Card
+	.card {
+		padding: 49px 38px;
+
+		//Card img
+		&__img {
+			left: 38px;
+		}
+	}
+}
+
+@include lg {
+	.card {
+		margin: 0;
+	}
+}

@@ -1,0 +1,74 @@
+@import "../../sass/layout";
+@import "../../sass/variables";
+
+//Footer
+.footer {
+	background: url("../../assets/svg/bg-footer-squiggle.svg") no-repeat top;
+	background-size: 100% 100%;
+	text-align: center;
+	margin-bottom: 164px;
+
+	//Footer title
+	&__title {
+		margin-bottom: 31px;
+	}
+
+	//form
+	.form {
+		max-width: 327px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+
+		//Form input
+		&__input {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+
+			//Error text
+			&-text {
+				position: absolute;
+				bottom: -25px;
+				left: 15px;
+				padding-top: 4px;
+				display: none;
+				font-size: 1.2rem;
+				color: $pink;
+			}
+		}
+
+		//Form error
+		&.error {
+			input {
+				border: 2px solid $pink;
+			}
+
+			.form__input-text {
+				display: block;
+			}
+		}
+	}
+}
+
+@include md {
+	//Footer
+	.footer {
+		margin-bottom: 105px;
+
+		.form {
+			max-width: 476px;
+			flex-direction: row;
+			justify-content: center;
+			gap: 16px;
+		}
+	}
+}
+
+@include lg {
+	//Footer
+	.footer {
+		margin-bottom: 117px;
+	}
+}

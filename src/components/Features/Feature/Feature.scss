@@ -1,0 +1,102 @@
+@import "../../../sass/variables";
+@import "../../../sass/mixins";
+
+//Feature
+.feature {
+	@include flex(center, center);
+	flex-direction: column;
+	text-align: center;
+	margin-bottom: 56px;
+
+	//Feature img
+	&__img {
+		width: 120px;
+		height: 124px;
+		display: grid;
+		place-items: center;
+		background-color: $blue;
+		border-radius: 45px;
+		margin-bottom: 32px;
+
+		img {
+			width: 66px;
+		}
+	}
+
+	//Feature content
+	&__content {
+		max-width: 327px;
+
+		//Title
+		&-title {
+			margin-bottom: 11px;
+		}
+	}
+
+	//Feature last child
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@include md {
+	//Feature
+	.feature {
+		position: relative;
+		flex-direction: row;
+		gap: 55px;
+		text-align: left;
+		margin-bottom: 40px;
+
+		//Feature content
+		&__content {
+			max-width: 340px;
+		}
+
+		//Odd feature
+		&:nth-child(odd) {
+			left: 60px;
+		}
+	}
+}
+
+@include lg {
+	//Feature
+	.feature {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 48px;
+		margin-bottom: 0;
+
+		//Feature img
+		&__img {
+			width: 160px;
+			height: 164px;
+			margin-bottom: 0;
+
+			img {
+				width: 80px;
+			}
+		}
+
+		//Feature content
+		&__content {
+			max-width: 255px;
+
+			//Title
+			&-title {
+				margin-bottom: 23px;
+			}
+		}
+
+		//Odd feature
+		&:nth-child(odd) {
+			left: 0;
+		}
+
+		//Even feature
+		&:nth-child(even) {
+			top: 48px;
+		}
+	}
+}

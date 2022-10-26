@@ -1,0 +1,52 @@
+@import "../../sass/_mixins";
+
+//Pricing
+.pricing {
+	margin-bottom: 144px;
+	text-align: center;
+
+	//Pricing title
+	&__title {
+		margin-bottom: 27px;
+	}
+
+	//Pricing text
+	&__text {
+		max-width: 573px;
+		margin: 0 auto;
+		margin-bottom: 80px;
+	}
+
+	//Cards
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		gap: 65px;
+	}
+}
+
+@include md {
+	//Pricing
+	.pricing {
+		margin-bottom: 119px;
+	}
+}
+
+@include lg {
+	//Pricing
+	.pricing {
+		margin-bottom: 151px;
+
+		//Pricing text
+		&__text {
+			margin-bottom: 115px;
+		}
+
+		//Cards
+		&__cards {
+			flex-direction: row;
+			justify-content: center;
+			gap: 30px;
+		}
+	}
+}
